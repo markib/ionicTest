@@ -1,0 +1,37 @@
+<ion-view title="Filter By">
+    <ion-content padding="'true'" class="has-header">
+        
+
+		<form ng-submit="getCategory((Categories.data.categories |filter:{selected: true}))">
+
+		<!--	<ion-list ng-repeat="category in Categories | groupBy:name">
+				<ion-item  >
+				  &lt;!&ndash;<ion-checkbox ng-model="category.selected">&ndash;&gt;
+					<p>{{category.categories}}</p>
+				  &lt;!&ndash;</ion-checkbox>&ndash;&gt;
+				</ion-item>
+			  </ion-list>
+			  -->
+
+
+			<ul ng-repeat="(key, value) in Categories.data">
+				<li ng-repeat="subcat in value">
+					<ion-checkbox ng-model="subcat.selected">
+					 {{ subcat.name }}
+					</ion-checkbox>
+				</li>
+			</ul>
+
+			  <div class="list box">
+				<button class="button button-block button-calm" type="submit">Apply</button>
+			  </div>
+		  
+		</form>
+	
+	
+		
+		
+
+
+    </ion-content>
+</ion-view>
